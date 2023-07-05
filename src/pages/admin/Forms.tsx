@@ -2,7 +2,7 @@ import React from "react";
 
 const Forms = () => {
   return (
-    <div>
+    <div data-aos="fade-up">
       <h3 className="text-3xl font-semibold text-gray-700">Forms</h3>
 
       <div className="mt-4">

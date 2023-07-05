@@ -5,7 +5,7 @@ const Tables = () => {
   const { simpleTableData, paginatedTableData, wideTableData } = useTableData();
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <h3 className="text-3xl font-medium text-gray-700">Tables</h3>
 
       <div className="mt-4">

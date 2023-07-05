@@ -9,7 +9,7 @@ const Cards = () => {
     }
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <h3 className="text-3xl font-semibold text-gray-700">Card</h3>
 
       <div className="mt-4 mb-3">

@@ -22,7 +22,7 @@ const Dashboard = () => {
   const [users, setUsers] = useState<User[]>(Array.from({ length: 10 }, () => ({ ...testUser })))
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <h3 className="text-3xl font-medium text-gray-700">Dashboard</h3>
 
       <div className="mt-4">

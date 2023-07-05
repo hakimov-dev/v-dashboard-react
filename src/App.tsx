@@ -1,5 +1,6 @@
 // Items
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 // Layouts
 import Dashboard from "./layouts/Dashboard";
 // Pages
@@ -11,9 +12,17 @@ import Forms from "./pages/admin/Forms";
 import Cards from './pages/admin/Cards'
 import Modal from './pages/admin/Modal'
 import Blank from "./pages/admin/Blank";
+// Packages
+// @ts-ignore
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const App = () => {
   const currentLocation = window.location.pathname;
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div>
