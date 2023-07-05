@@ -6,6 +6,7 @@ import Dashboard from "./layouts/Dashboard";
 import Home from "./pages/auth/login";
 import AdminIndex from './pages/admin/Dashboard'
 import Elements from './pages/admin/Elements'
+import Tables from './pages/admin/Tables'
 
 const App = () => {
   const currentLocation = window.location.pathname;
@@ -24,6 +25,7 @@ const App = () => {
            <Routes>
                <Route path="/admin-dashboard" element={<AdminIndex />} />
                <Route path="/ui-elements" element={<Elements />} />
+               <Route path="/tables" element={<Tables />} />
            </Routes>
              </Dashboard>
         </Router>
