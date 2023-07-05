@@ -37,3 +37,9 @@ code {
 .border-gray-200{
   border: 2px solid rgb(229 231 235)
 }
+
+input{
+  padding: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
