@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const login: React.FC = () => {
+  
+    const [email, setEmail] = useState('johndoe@mail.com')
+    const [password, setPassword] = useState('@#!@#asdf1231!_!@#')
+    
   return (
     <div className="flex items-center justify-center h-screen px-6 bg-gray-200">
       <div className="w-full max-w-sm p-6 bg-white rounded-md shadow-md">
