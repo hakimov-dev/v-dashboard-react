@@ -1,24 +1,45 @@
-import React from "react";
-import { useSidebar } from "../hooks/useSidebar";
+import React, { useEffect, useState } from "react";
+// import { useSidebar } from "../hooks/useSidebar";
 import { NavLink } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
-  let { isOpen, updateVariable } = useSidebar();
+  let [isOpen, updateVariable] = useState(false);
 
-  const activeClass = "flex items-center px-6 py-2 mt-4 duration-200 border-l-4 bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100";
+  const activeClass =
+    "flex items-center px-6 py-2 mt-4 duration-200 border-l-4 bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100";
 
   const inActiveClass =
     "flex items-center px-6 py-2 mt-4 duration-200 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100";
 
   function updateValue() {
     updateVariable(false);
+
+    localStorage.sidebarOpen = false;
   }
+
+  const handleStorageChange = (event: StorageEvent) => {
+    updateVariable(true);
+  };
+
+  useEffect(() => {
+    localStorage.sidebarOpen = false;
+
+    updateVariable(false);
+    // Add event listener
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      // Clean up: Remove event listener when the component is unmounted
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   return (
     <div>
       <div className="flex">
         {/* <!-- Backdrop --> */}
         <div
-          className={`fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden ${
+          className={`fixed inset-0 z-20 transition-opacity bg-black opacity-50 ${
             isOpen ? "block" : "hidden"
           }`}
           onClick={updateValue}
@@ -60,7 +81,9 @@ const Sidebar: React.FC = () => {
 
           <nav className="mt-10">
             <NavLink
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/admin-dashboard"
             >
               <svg
@@ -82,8 +105,10 @@ const Sidebar: React.FC = () => {
               <span className="mx-4">Dashboard</span>
             </NavLink>
 
-            <NavLink 
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/ui-elements"
             >
               <svg
@@ -113,8 +138,10 @@ const Sidebar: React.FC = () => {
               <span className="mx-4">UI Elements</span>
             </NavLink>
 
-            <NavLink 
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/tables"
             >
               <svg
@@ -140,8 +167,10 @@ const Sidebar: React.FC = () => {
               <span className="mx-4">Tables</span>
             </NavLink>
 
-            <NavLink 
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/forms"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -156,8 +185,10 @@ const Sidebar: React.FC = () => {
               <span className="mx-4">Forms</span>
             </NavLink>
 
-            <NavLink 
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/cards"
             >
               <svg
@@ -177,8 +208,10 @@ const Sidebar: React.FC = () => {
               <span className="mx-4">Cards</span>
             </NavLink>
 
-            <NavLink 
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/modal"
             >
               <svg
@@ -195,8 +228,10 @@ const Sidebar: React.FC = () => {
               <span className="mx-4">Modal</span>
             </NavLink>
 
-            <NavLink 
-              className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${activeClass}` : `${inActiveClass}`
+              }
               to="/blank"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { useSidebar } from "../hooks/useSidebar";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  let { isOpen, updateVariable } = useSidebar();
+  let [ isOpen, updateVariable ] = useState<Boolean>(false);
   let [dropDownOpen, setDropDown] = useState<Boolean>(false);
   let navigate = useNavigate();
 
   function updateValue() {
     updateVariable(true);
+
+    localStorage.sidebarOpen = true
+    window.dispatchEvent(new Event("storage"));
   }
 
   function dropnDown() {
@@ -20,6 +22,10 @@ const Header = () => {
     navigate("/");
     window.location.reload();
   }
+
+  useEffect(() => {
+    updateVariable(localStorage.sidebarOpen)
+  }, [])
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-white border-b-4 border-indigo-600">
       <div className="flex items-center">
@@ -89,19 +95,21 @@ const Header = () => {
         <div className="relative">
           <button
             className="relative z-10 block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none"
-            onClick={dropnDown}
           >
             <img
+              onClick={dropnDown}
               className="object-cover w-full h-full"
               src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80"
               alt="Your avatar"
             />
           </button>
 
-          <div
+          {dropDownOpen && (
+            <div
             className="fixed inset-0 z-10 w-full h-full"
             onClick={dropnDown}
-          />
+            />
+          )}
 
           {dropDownOpen && (
             <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl">
