@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Layouts
 import Dashboard from "./layouts/Dashboard";
 // Pages
-import Home from "./pages/login";
+import Home from "./pages/auth/login";
 
 const App = () => {
   const currentLocation = window.location.pathname;
