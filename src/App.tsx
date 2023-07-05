@@ -9,6 +9,8 @@ import Elements from './pages/admin/Elements'
 import Tables from './pages/admin/Tables'
 import Forms from "./pages/admin/Forms";
 import Cards from './pages/admin/Cards'
+import Modal from './pages/admin/Modal'
+import Blank from "./pages/admin/Blank";
 
 const App = () => {
   const currentLocation = window.location.pathname;
@@ -30,6 +32,8 @@ const App = () => {
                <Route path="/tables" element={<Tables />} />
                <Route path="/forms" element={<Forms />} />
                <Route path="/cards" element={<Cards />} />
+               <Route path="/modal" element={<Modal />} />
+               <Route path="/blank" element={<Blank />} />
            </Routes>
              </Dashboard>
         </Router>
