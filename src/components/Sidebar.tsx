@@ -1,9 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import { useSidebar } from "../composables/useSidebar";
 
 const Sidebar: React.FC = () => {
 
  let {isOpen, updateVariable} = useSidebar()
+
+ const activeClass = 'bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100'
+
+ const inActiveClass = 'border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100'
 
  function updateValue(){
    updateVariable(false)
