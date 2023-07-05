@@ -1,5 +1,5 @@
 import React from "react";
-import { useSidebar } from "../composables/useSidebar";
+import { useSidebar } from "../hooks/useSidebar";
 import { NavLink } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
