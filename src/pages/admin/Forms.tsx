@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Tables = () => {
+const Forms = () => {
     return (
         <h1>Hello world!</h1>
     )
 }
 
-export default Tables
+export default Forms
