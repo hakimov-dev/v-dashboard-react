@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom"
 
-const login: React.FC = () => {
-  
+const Login = () => {
+
     const [email, setEmail] = useState('johndoe@mail.com')
     const [password, setPassword] = useState('@#!@#asdf1231!_!@#')
+
+    const navigate = useNavigate()
     
+    const setValue = (event: any) => {
+        if(event.target.type == 'email')
+            setEmail(event.target.value)
+        else
+            setPassword(event.target.value)
+    }
+
+    function pushAnotherPage(){
+        navigate('/admin-dashboard')
+    }
+
   return (
     <div className="flex items-center justify-center h-screen px-6 bg-gray-200">
       <div className="w-full max-w-sm p-6 bg-white rounded-md shadow-md">
@@ -35,13 +49,15 @@ const login: React.FC = () => {
 
         <form
           className="mt-4"
-          // @submit.prevent="login"
+          onSubmit={pushAnotherPage}
         >
           <label className="block">
             <span className="text-sm text-gray-700">Email</span>
             <input
               v-model="email"
+              value={email}
               type="email"
+              onChange={setValue}
               className="block w-full mt-1 p-3 border-gray-200 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
             />
           </label>
@@ -49,8 +65,9 @@ const login: React.FC = () => {
           <label className="block mt-3">
             <span className="text-sm text-gray-700">Password</span>
             <input
-              v-model="password"
               type="password"
+              value={password}
+              onChange={setValue}
               className="block w-full mt-1 p-3 border-gray-200 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
             />
           </label>
@@ -90,4 +107,4 @@ const login: React.FC = () => {
   );
 };
 
-export default login;
+export default Login;
