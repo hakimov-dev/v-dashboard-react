@@ -1,7 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Sidebar from "../components/Sidebar";
 
-const Dashboard: React.FC = (props, children) => {
+interface SlotComponentProps {
+  children: ReactNode;
+}
+
+const Dashboard: React.FC<SlotComponentProps> = (props, children) => {
   return (
     <div className="flex h-screen bg-gray-200 font-roboto">
       <Sidebar />
