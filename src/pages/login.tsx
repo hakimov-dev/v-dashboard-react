@@ -38,7 +38,7 @@ const login: React.FC = () => {
             <input
               v-model="email"
               type="email"
-              className="block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+              className="block w-full mt-1 p-3 border-gray-200 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
             />
           </label>
 
@@ -47,7 +47,7 @@ const login: React.FC = () => {
             <input
               v-model="password"
               type="password"
-              className="block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+              className="block w-full mt-1 p-3 border-gray-200 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
             />
           </label>
 

@@ -33,3 +33,7 @@ code {
 ::-webkit-scrollbar-thumb:hover{
   background: #718096;
 }
+
+.border-gray-200{
+  border: 2px solid rgb(229 231 235)
+}
