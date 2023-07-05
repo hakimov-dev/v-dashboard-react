@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
         {/* <!-- End Backdrop --> */}
 
         <div
-          className={`fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-900 lg:translate-x-0 lg:static lg:inset-0 ${
+          className={`fixed inset-y-0 left-0 z-30 w-64 h-screen overflow-y-auto transition duration-300 transform bg-gray-900 lg:translate-x-0 lg:static lg:inset-0 ${
             isOpen ? "translate-x-0 ease-out" : "-translate-x-full ease-in"
           }`}
         >
@@ -61,7 +61,7 @@ const Sidebar: React.FC = () => {
           <nav className="mt-10">
             <NavLink
               className={({ isActive }) => (isActive ? `${activeClass}` : `${inActiveClass}`)}
-              to="/dashboard"
+              to="/admin-dashboard"
             >
               <svg
                 className="w-5 h-5"

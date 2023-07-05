@@ -1,28 +1,30 @@
 // Items
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Layouts
 import Dashboard from "./layouts/Dashboard";
 // Pages
 import Home from "./pages/auth/login";
+import AdminIndex from './pages/admin/Dashboard'
 
 const App = () => {
   const currentLocation = window.location.pathname;
+
   return (
     <div>
-      {currentLocation == "/" ? (
-        <BrowserRouter>
+      {currentLocation === "/" ? (
+        <Router>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       ) : (
-        <Dashboard>
-        <BrowserRouter>
+        <Router>
+             <Dashboard>
            <Routes>
-             <Route path="/" element={<Home />} />
+               <Route path="/admin-dashboard" element={<AdminIndex />} />
            </Routes>
-        </BrowserRouter>
-        </Dashboard>
+             </Dashboard>
+        </Router>
       )}
     </div>
   );

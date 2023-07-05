@@ -9,7 +9,7 @@ const Login = () => {
     const navigate = useNavigate()
     
     const setValue = (event: any) => {
-        if(event.target.type == 'email')
+        if(event.target.type === 'email')
             setEmail(event.target.value)
         else
             setPassword(event.target.value)
@@ -17,6 +17,7 @@ const Login = () => {
 
     function pushAnotherPage(){
         navigate('/admin-dashboard')
+        window.location.reload()
     }
 
   return (
@@ -82,7 +83,6 @@ const Login = () => {
                 <span className="mx-2 text-sm text-gray-600">Remember me</span>
               </label>
             </div>
-
             <div>
               <a
                 className="block text-sm text-indigo-700 fontme hover:underline"
