@@ -26,6 +26,7 @@ const App = () => {
 
   return (
     <div>
+      <a title="Support project" target="blank" className="fixed bottom-5 right-4 z-50" href="https://www.buymeacoffee.com/hakimovDev"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hakimovDev&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
       {currentLocation === "/" ? (
         <Router>
           <Routes>
