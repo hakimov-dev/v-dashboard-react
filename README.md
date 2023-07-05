@@ -6,9 +6,11 @@
 
 <a href="https://www.buymeacoffee.com/hakimovDev"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hakimovDev&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
 
-## Versions
+## Versions 🔗
 [Vue Version](https://github.com/wobsoriano/v-dashboard)
 
+## Demo 💻
+[Demo](https://v-dashboard-react.netlify.app/)
 
 ## About this project 👨‍💻
 Introducing the React TS App Starter Admin Dashboard Template, a cutting-edge solution that combines the power of React and TypeScript with the elegance of Tailwind CSS. This meticulously crafted template is designed to provide developers with a solid foundation for building highly scalable and efficient admin dashboards.
