@@ -7,7 +7,7 @@
 <a href="https://www.buymeacoffee.com/hakimovDev"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hakimovDev&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
 
 ## Versions 🔗
-[Vue Version](https://github.com/wobsoriano/v-dashboard)
+[Vue Version](https://github.com/hakimov-dev/v-dashboard)
 
 ## Demo 💻
 [Demo](https://v-dashboard-react.netlify.app/)
